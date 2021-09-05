@@ -107,13 +107,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\WcfTipoCliente\TipoCliente.disco" />
-    <None Include="Connected Services\WcfTipoCliente\configuration91.svcinfo" />
-    <None Include="Connected Services\WcfTipoCliente\configuration.svcinfo" />
-    <None Include="Connected Services\WcfTipoCliente\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="TipoCliente.aspx" />
     <None Include="Connected Services\WcfCliente\Cliente.disco" />
     <None Include="Connected Services\WcfCliente\configuration91.svcinfo" />
@@ -154,19 +147,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\WcfCliente\Service1.wsdl" />
-    <None Include="Connected Services\WcfTipoCliente\Service1.wsdl" />
-    <None Include="Connected Services\WcfTipoCliente\TipoCliente.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WcfTipoCliente\TipoCliente1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WcfTipoCliente\TipoCliente2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WcfTipoCliente\TipoCliente3.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -204,11 +184,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="Connected Services\WcfTipoCliente\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="TipoCliente.aspx.cs">
       <DependentUpon>TipoCliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -281,7 +256,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\WcfCliente\" />
-    <WCFMetadataStorage Include="Connected Services\WcfTipoCliente\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

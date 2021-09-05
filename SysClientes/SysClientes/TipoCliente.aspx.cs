@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using SysClientes.WcfTipoCliente;
+using SysClientes.WcfCliente;
 using System.Data;
 
 namespace SysClientes
 {
-    public partial class About : Page
+    public partial class TipoCliente : Page
     {
         #region Variable Declaration  
         ClienteClient obj = new ClienteClient();
@@ -36,8 +36,8 @@ namespace SysClientes
         }
         private void SaveClientes()
         {
-            Clientes eDetails = new Clientes();
-            eDetails.GetSetCLIE_NOME = txtNome.Text.Trim();
+            ClienteClient eDetails = new ClienteClient();
+            eDetails. = txtNome.Text.Trim();
             eDetails.GetSetCLIE_CPF = txtCPF.Text.Trim();
             eDetails.GetSetCLIE_NASCIMENTO = Convert.ToDateTime(txtNascimento.Text);
             eDetails.GetSetCLIE_SEXO = txtSexo.Text.Trim();

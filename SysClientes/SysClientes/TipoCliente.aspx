@@ -47,7 +47,7 @@
                                 CellPadding="5" Width="100%">
                                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                 <Columns>
-                                    <asp:TemplateField HeaderText="Nome">
+                                    <asp:TemplateField HeaderText="Tipo">
                                         <ItemTemplate>
                                             <asp:Label ID="lblName" runat="server" Text='<%# Eval("TICL_TIPO")%>' class="form-label">  
                                             </asp:Label>
@@ -55,47 +55,23 @@
                                             </asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="CPF">
+                                    <asp:TemplateField HeaderText="Descrição">
                                         <ItemTemplate>
-                                            <asp:Label ID="lblCpf" runat="server" Text='<%#Eval("CLIE_CPF") %>'>  
-                                            </asp:Label>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Nascimento">
-                                        <ItemTemplate>
-                                            <asp:Label ID="lblNascimento" runat="server" Text='<%#Eval("CLIE_NASCIMENTO") %>'>  
-                                            </asp:Label>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Sexo">
-                                        <ItemTemplate>
-                                            <asp:Label ID="lblSexo" runat="server" Text='<%#Eval("CLIE_SEXO") %>'>  
-                                            </asp:Label>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Situação">
-                                        <ItemTemplate>
-                                            <asp:Label ID="lblSituacao" runat="server" Text='<%#Eval("SICL_DESCRICAO") %>'>  
-                                            </asp:Label>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Tipo">
-                                        <ItemTemplate>
-                                            <asp:Label ID="lblTipo" runat="server" Text='<%#Eval("TICL_TIPO") %>'>  
+                                            <asp:Label ID="lblNascimento" runat="server" Text='<%#Eval("TICL_DESCRICAO") %>'>  
                                             </asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Editar">
                                         <ItemTemplate>
                                             <asp:LinkButton ID="lnkEdit" runat="server" Text="Editar" CausesValidation="false"
-                                                CommandArgument=' <%#Eval("CLIE_PK_ID") %>' OnCommand="lnkEdit_Command" ToolTip="Edit" />
+                                                CommandArgument=' <%#Eval("TICL_PK_ID") %>' OnCommand="lnkEdit_Command" ToolTip="Edit" />
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Excluir">
                                         <ItemTemplate>
                                             <asp:LinkButton ID="lnkDelete" runat="server" Text="Excluir" CausesValidation="false"
                                                 CommandArgument='  
-                                                <%#Eval("CLIE_PK_ID") %>'
+                                                <%#Eval("TICL_PK_ID") %>'
                                                 CommandName="Delete" OnCommand="lnkDelete_Command"
                                                 OnClientClick="return confirm('Você tem certeza que deseja excluir esse registro?')" ToolTip="Delete" />
                                         </ItemTemplate>
