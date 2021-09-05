@@ -25,28 +25,6 @@ namespace WCF_CRUD
         [OperationContract]
         bool DeleteClientes(Clientes eDatils);
 
-        ////SITUAÇÃO DO CLIENTE
-        //string InsertSituacaoCliente(SituacaoCliente eDatils);
-        //[OperationContract]
-        //DataSet GetSituacaoCliente(SituacaoCliente eDatils);
-        //[OperationContract]
-        //DataSet FetchUpdatedRecords(SituacaoCliente eDatils);
-        //[OperationContract]
-        //string UpdateSituacaoCliente(SituacaoCliente eDatils);
-        //[OperationContract]
-        //bool DeleteSituacaoCliente(SituacaoCliente eDatils);
-
-        //TIPO DE CLIENTE
-        string InsertTipoCliente(TipoCliente eDatils);
-        [OperationContract]
-        DataSet GetTipoCliente(TipoCliente eDatils);
-        [OperationContract]
-        DataSet FetchUpdatedRecords(TipoCliente eDatils);
-        [OperationContract]
-        string UpdateTipoCliente(TipoCliente eDatils);
-        [OperationContract]
-        bool DeleteTipoCliente(TipoCliente eDatils);
-
         // TODO: Add your service operations here
     }
 
@@ -105,52 +83,6 @@ namespace WCF_CRUD
         {
             get { return CLIE_FK_PK_SICL; }
             set { CLIE_FK_PK_SICL = value; }
-        }
-    }
-    //[DataContract]
-    //public class SituacaoCliente
-    //{
-    //    int? SICL_PK_ID;
-    //    string SICL_DESCRICAO = string.Empty;
-
-    //    [DataMember]
-    //    public int? GetSetSICL_PK_ID
-    //    {
-    //        get { return SICL_PK_ID; }
-    //        set { SICL_PK_ID = value; }
-    //    }
-    //    [DataMember]
-    //    public string GetSetSICL_DESCRICAO
-    //    {
-    //        get { return SICL_DESCRICAO; }
-    //        set { SICL_DESCRICAO = value; }
-    //    }
-
-    //}
-    [DataContract]
-    public class TipoCliente
-    {
-        int? TICL_PK_ID;
-        string TICL_TIPO = string.Empty;
-        string TICL_DESCRICAO = string.Empty;
-
-        [DataMember]
-        public int? GetSetTICL_PK_ID
-        {
-            get { return TICL_PK_ID; }
-            set { TICL_PK_ID = value; }
-        }
-        [DataMember]
-        public string GetSetTICL_TIPO
-        {
-            get { return TICL_TIPO; }
-            set { TICL_TIPO = value; }
-        }
-        [DataMember]
-        public string GetSetTICL_DESCRICAO
-        {
-            get { return TICL_DESCRICAO; }
-            set { TICL_DESCRICAO = value; }
         }
     }
 }

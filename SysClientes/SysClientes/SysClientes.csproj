@@ -107,6 +107,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\WcfSituacaoClientes\ServiceSituacaoCliente.wsdl" />
+    <None Include="Connected Services\WcfSituacaoClientes\ServiceSituacaoCliente.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WcfSituacaoClientes\ServiceSituacaoCliente1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WcfSituacaoClientes\ServiceSituacaoCliente2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WcfSituacaoClientes\ServiceSituacaoCliente3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WcfTipoCliente\ServiceTipoCliente.disco" />
+    <None Include="Connected Services\WcfTipoCliente\configuration91.svcinfo" />
+    <None Include="Connected Services\WcfTipoCliente\configuration.svcinfo" />
+    <None Include="Connected Services\WcfTipoCliente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\WcfSituacaoClientes\ServiceSituacaoCliente.disco" />
+    <None Include="Connected Services\WcfSituacaoClientes\configuration91.svcinfo" />
+    <None Include="Connected Services\WcfSituacaoClientes\configuration.svcinfo" />
+    <None Include="Connected Services\WcfSituacaoClientes\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="TipoCliente.aspx" />
     <None Include="Connected Services\WcfCliente\Cliente.disco" />
     <None Include="Connected Services\WcfCliente\configuration91.svcinfo" />
@@ -115,7 +142,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Contact.aspx" />
+    <Content Include="SituacaoCliente.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -147,6 +174,19 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\WcfCliente\Service1.wsdl" />
+    <None Include="Connected Services\WcfTipoCliente\ServiceTipoCliente.wsdl" />
+    <None Include="Connected Services\WcfTipoCliente\ServiceTipoCliente.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WcfTipoCliente\ServiceTipoCliente1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WcfTipoCliente\ServiceTipoCliente2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WcfTipoCliente\ServiceTipoCliente3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -184,6 +224,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Connected Services\WcfSituacaoClientes\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WcfTipoCliente\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="TipoCliente.aspx.cs">
       <DependentUpon>TipoCliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -197,12 +247,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
+    <Compile Include="SituacaoCliente.aspx.cs">
+      <DependentUpon>SituacaoCliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
+    <Compile Include="SituacaoCliente.aspx.designer.cs">
+      <DependentUpon>SituacaoCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -256,6 +306,8 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\WcfCliente\" />
+    <WCFMetadataStorage Include="Connected Services\WcfSituacaoClientes\" />
+    <WCFMetadataStorage Include="Connected Services\WcfTipoCliente\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

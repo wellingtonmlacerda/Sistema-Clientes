@@ -5,3 +5,10 @@ C:\Users\Wellington Lacerda\Downloads\Prova Remota - Fácil Assit\Sistema Client
 C:\Users\Wellington Lacerda\Downloads\Prova Remota - Fácil Assit\Sistema Clientes\WCF_CRUD\WCF_CRUD\bin\WCF_CRUD.pdb
 C:\Users\Wellington Lacerda\Downloads\Prova Remota - Fácil Assit\Sistema Clientes\WCF_CRUD\WCF_CRUD\obj\Debug\WCF_CRUD.dll
 C:\Users\Wellington Lacerda\Downloads\Prova Remota - Fácil Assit\Sistema Clientes\WCF_CRUD\WCF_CRUD\obj\Debug\WCF_CRUD.pdb
+C:\Users\Wellington Lacerda\Documents\GitHub\SysClientes\WCF_CRUD\WCF_CRUD\bin\WCF_CRUD.dll.config
+C:\Users\Wellington Lacerda\Documents\GitHub\SysClientes\WCF_CRUD\WCF_CRUD\bin\WCF_CRUD.dll
+C:\Users\Wellington Lacerda\Documents\GitHub\SysClientes\WCF_CRUD\WCF_CRUD\bin\WCF_CRUD.pdb
+C:\Users\Wellington Lacerda\Documents\GitHub\SysClientes\WCF_CRUD\WCF_CRUD\obj\Debug\WCF_CRUD.csprojAssemblyReference.cache
+C:\Users\Wellington Lacerda\Documents\GitHub\SysClientes\WCF_CRUD\WCF_CRUD\obj\Debug\WCF_CRUD.csproj.CoreCompileInputs.cache
+C:\Users\Wellington Lacerda\Documents\GitHub\SysClientes\WCF_CRUD\WCF_CRUD\obj\Debug\WCF_CRUD.dll
+C:\Users\Wellington Lacerda\Documents\GitHub\SysClientes\WCF_CRUD\WCF_CRUD\obj\Debug\WCF_CRUD.pdb

@@ -4,61 +4,51 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using SysClientes.WcfCliente;
+using SysClientes.WcfTipoCliente;
 using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace SysClientes
 {
-    public partial class TipoCliente : Page
+    public partial class TipoClienteCrud : Page
     {
         #region Variable Declaration  
-        ClienteClient obj = new ClienteClient();
+        ServiceTipoClienteClient obj = new ServiceTipoClienteClient();
         #endregion
         #region User Define Methods  
         private void ClearControls()
         {
-            txtNome.Text = string.Empty;
-            txtCPF.Text = string.Empty;
-            txtNascimento.Text = string.Empty;
-            txtSexo.Text = string.Empty;
-            txtSituacao.Text = string.Empty;
             txtTipo.Text = string.Empty;
+            txtDescricao.Text = string.Empty;
             btnSubmit.Text = "Salvar";
-            txtNome.Focus();
+            txtTipo.Focus();
         }
         private void BindClientes(int? Id)
         {
-            Clientes eDetails = new Clientes();
+            TipoCliente eDetails = new TipoCliente();
             DataSet ds = new DataSet();
-            ds = obj.GetClientes(eDetails);
+            ds = obj.GetTipoCliente(eDetails);
             grdWcfTest.DataSource = ds;
             grdWcfTest.DataBind();
         }
         private void SaveClientes()
         {
-            ClienteClient eDetails = new ClienteClient();
-            eDetails. = txtNome.Text.Trim();
-            eDetails.GetSetCLIE_CPF = txtCPF.Text.Trim();
-            eDetails.GetSetCLIE_NASCIMENTO = Convert.ToDateTime(txtNascimento.Text);
-            eDetails.GetSetCLIE_SEXO = txtSexo.Text.Trim();
-            eDetails.GetSetCLIE_FK_PK_SICL = Convert.ToInt32(txtSituacao.Text.Trim());
-            eDetails.GetSetCLIE_FK_PK_TICL = Convert.ToInt32(txtTipo.Text.Trim());
-            lblStatus.Text = obj.InsertClientes(eDetails);
+            TipoCliente eDetails = new TipoCliente();
+            eDetails.GetSetTICL_TIPO = txtTipo.Text.Trim();
+            eDetails.GetSetTICL_DESCRICAO = txtDescricao.Text.Trim();
+            lblStatus.Text = obj.InsertTipoCliente(eDetails);
             ClearControls();
             BindClientes(null);
         }
         private void UpdateClientes()
         {
-            Clientes eDetails = new Clientes();
-            eDetails.GetSetCLIE_PK_ID = Convert.ToInt32(ViewState["ID"].ToString());
-            eDetails.GetSetCLIE_NOME = txtNome.Text.Trim();
-            eDetails.GetSetCLIE_CPF = txtCPF.Text.Trim();
-            eDetails.GetSetCLIE_NASCIMENTO = Convert.ToDateTime(txtNascimento.Text);
-            eDetails.GetSetCLIE_SEXO = txtSexo.Text.Trim();
-            eDetails.GetSetCLIE_FK_PK_SICL = Convert.ToInt32(txtSituacao.Text.Trim());
-            eDetails.GetSetCLIE_FK_PK_TICL = Convert.ToInt32(txtTipo.Text.Trim());
-            obj.UpdateClientes(eDetails);
-            lblStatus.Text = obj.UpdateClientes(eDetails);
+            TipoCliente eDetails = new TipoCliente();
+            eDetails.GetSetTICL_PK_ID = Convert.ToInt32(ViewState["ID"].ToString());
+            eDetails.GetSetTICL_TIPO = txtTipo.Text.Trim();
+            eDetails.GetSetTICL_DESCRICAO = txtDescricao.Text.Trim();
+            obj.UpdateTipoCliente(eDetails);
+            lblStatus.Text = obj.UpdateTipoCliente(eDetails);
             ClearControls();
             BindClientes(null);
         }
@@ -86,27 +76,23 @@ namespace SysClientes
         }
         protected void lnkEdit_Command(object sender, CommandEventArgs e)
         {
-            Clientes eDetails = new Clientes();
-            eDetails.GetSetCLIE_PK_ID = int.Parse(e.CommandArgument.ToString());
-            ViewState["ID"] = eDetails.GetSetCLIE_PK_ID;
+            TipoCliente eDetails = new TipoCliente();
+            eDetails.GetSetTICL_PK_ID = int.Parse(e.CommandArgument.ToString());
+            ViewState["ID"] = eDetails.GetSetTICL_PK_ID;
             DataSet ds = new DataSet();
             ds = obj.FetchUpdatedRecords(eDetails);
             if (ds.Tables[0].Rows.Count > 0)
             {
-                txtNome.Text = ds.Tables[0].Rows[0]["CLIE_NOME"].ToString();
-                txtCPF.Text = ds.Tables[0].Rows[0]["CLIE_CPF"].ToString();
-                txtNascimento.Text = ds.Tables[0].Rows[0]["CLIE_NASCIMENTO"].ToString();
-                txtSexo.Text = ds.Tables[0].Rows[0]["CLIE_SEXO"].ToString();
-                txtSituacao.Text = ds.Tables[0].Rows[0]["CLIE_FK_PK_SICL"].ToString();
-                txtTipo.Text = ds.Tables[0].Rows[0]["CLIE_FK_PK_TICL"].ToString();
+                txtTipo.Text = ds.Tables[0].Rows[0]["TICL_TIPO"].ToString();
+                txtDescricao.Text = ds.Tables[0].Rows[0]["TICL_DESCRICAO"].ToString();
                 btnSubmit.Text = "Atualizar";
             }
         }
         protected void lnkDelete_Command(object sender, CommandEventArgs e)
         {
-            Clientes eDetails = new Clientes();
-            eDetails.GetSetCLIE_PK_ID = int.Parse(e.CommandArgument.ToString());
-            if (obj.DeleteClientes(eDetails) == true)
+            TipoCliente eDetails = new TipoCliente();
+            eDetails.GetSetTICL_PK_ID = int.Parse(e.CommandArgument.ToString());
+            if (obj.DeleteTipoCliente(eDetails) == true)
             {
                 lblStatus.Text = "Registro excluido com sucesso";
             }

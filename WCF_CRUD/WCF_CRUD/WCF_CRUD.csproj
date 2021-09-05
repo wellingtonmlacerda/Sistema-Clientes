@@ -61,10 +61,20 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ServiceSituacaoCliente.svc" />
+    <Content Include="ServiceTipoCliente.svc" />
     <Content Include="Cliente.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IServiceSituacaoCliente.cs" />
+    <Compile Include="IServiceTipoCliente.cs" />
+    <Compile Include="ServiceSituacaoCliente.svc.cs">
+      <DependentUpon>ServiceSituacaoCliente.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceTipoCliente.svc.cs">
+      <DependentUpon>ServiceTipoCliente.svc</DependentUpon>
+    </Compile>
     <Compile Include="Cliente.svc.cs">
       <DependentUpon>Cliente.svc</DependentUpon>
     </Compile>

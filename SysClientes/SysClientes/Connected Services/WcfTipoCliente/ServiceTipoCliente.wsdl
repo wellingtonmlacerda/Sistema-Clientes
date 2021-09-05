@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceTipoCliente" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:57999/ServiceTipoCliente.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:57999/ServiceTipoCliente.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:57999/ServiceTipoCliente.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCF_CRUD" />
+      <xsd:import schemaLocation="http://localhost:57999/ServiceTipoCliente.svc?xsd=xsd3" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceTipoCliente_InsertTipoCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTipoCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTipoCliente_InsertTipoCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTipoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTipoCliente_GetTipoCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTipoCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTipoCliente_GetTipoCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTipoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTipoCliente_FetchUpdatedRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:FetchUpdatedRecords" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTipoCliente_FetchUpdatedRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FetchUpdatedRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTipoCliente_UpdateTipoCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTipoCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTipoCliente_UpdateTipoCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTipoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTipoCliente_DeleteTipoCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTipoCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServiceTipoCliente_DeleteTipoCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTipoClienteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceTipoCliente">
+    <wsdl:operation name="InsertTipoCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTipoCliente/InsertTipoCliente" message="tns:IServiceTipoCliente_InsertTipoCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTipoCliente/InsertTipoClienteResponse" message="tns:IServiceTipoCliente_InsertTipoCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTipoCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTipoCliente/GetTipoCliente" message="tns:IServiceTipoCliente_GetTipoCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTipoCliente/GetTipoClienteResponse" message="tns:IServiceTipoCliente_GetTipoCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchUpdatedRecords">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTipoCliente/FetchUpdatedRecords" message="tns:IServiceTipoCliente_FetchUpdatedRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTipoCliente/FetchUpdatedRecordsResponse" message="tns:IServiceTipoCliente_FetchUpdatedRecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTipoCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTipoCliente/UpdateTipoCliente" message="tns:IServiceTipoCliente_UpdateTipoCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTipoCliente/UpdateTipoClienteResponse" message="tns:IServiceTipoCliente_UpdateTipoCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTipoCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceTipoCliente/DeleteTipoCliente" message="tns:IServiceTipoCliente_DeleteTipoCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceTipoCliente/DeleteTipoClienteResponse" message="tns:IServiceTipoCliente_DeleteTipoCliente_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceTipoCliente" type="tns:IServiceTipoCliente">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertTipoCliente">
+      <soap:operation soapAction="http://tempuri.org/IServiceTipoCliente/InsertTipoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTipoCliente">
+      <soap:operation soapAction="http://tempuri.org/IServiceTipoCliente/GetTipoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchUpdatedRecords">
+      <soap:operation soapAction="http://tempuri.org/IServiceTipoCliente/FetchUpdatedRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTipoCliente">
+      <soap:operation soapAction="http://tempuri.org/IServiceTipoCliente/UpdateTipoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTipoCliente">
+      <soap:operation soapAction="http://tempuri.org/IServiceTipoCliente/DeleteTipoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceTipoCliente">
+    <wsdl:port name="BasicHttpBinding_IServiceTipoCliente" binding="tns:BasicHttpBinding_IServiceTipoCliente">
+      <soap:address location="http://localhost:57999/ServiceTipoCliente.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -65,11 +65,15 @@
                                 CellPadding="5" Width="100%">
                                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                 <Columns>
+                                    <asp:TemplateField HeaderText="ID">
+                                        <ItemTemplate>
+                                            <asp:Label ID="lblId" runat="server" Text='<%#Eval("CLIE_PK_ID")%>' class="form-label">  
+                                            </asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Nome">
                                         <ItemTemplate>
                                             <asp:Label ID="lblName" runat="server" Text='<%# Eval("CLIE_NOME")%>' class="form-label">  
-                                            </asp:Label>
-                                            <asp:Label ID="lblId" runat="server" Visible="false" Text='<%#Eval("CLIE_PK_ID")%>' class="form-label">  
                                             </asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>

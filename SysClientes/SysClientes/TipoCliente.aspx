@@ -1,10 +1,10 @@
-﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TipoCliente.aspx.cs" Inherits="SysClientes.About" %>
+﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TipoCliente.aspx.cs" Inherits="SysClientes.TipoClienteCrud" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1">
         <div style="width: 100%;" align="center">
             <fieldset style="width: 60%;">
-                <legend>CRUD Cliente</legend>
+                <legend>CRUD Tipo de Cliente</legend>
                 <table class="table">
                     <tr>
                         <td>Tipo</td>
@@ -13,13 +13,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>CPF</td>
-                        <td>
-                            <asp:TextBox ID="txtCPF" runat="server" class="form-control"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Descrição</td>
+                        <td>Razão Socieal</td>
                         <td>
                             <asp:TextBox ID="txtDescricao" runat="server" class="form-control"></asp:TextBox>
                         </td>
@@ -47,11 +41,14 @@
                                 CellPadding="5" Width="100%">
                                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                 <Columns>
-                                    <asp:TemplateField HeaderText="Tipo">
+                                    <asp:TemplateField HeaderText="ID">
+                                        <ItemTemplate>
+                                            <asp:Label ID="lblId" runat="server" Text='<%#Eval("TICL_PK_ID")%>' class="form-label">  
+                                            </asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField><asp:TemplateField HeaderText="Tipo">
                                         <ItemTemplate>
                                             <asp:Label ID="lblName" runat="server" Text='<%# Eval("TICL_TIPO")%>' class="form-label">  
-                                            </asp:Label>
-                                            <asp:Label ID="lblId" runat="server" Visible="false" Text='<%#Eval("TICL_PK_ID")%>' class="form-label">  
                                             </asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
