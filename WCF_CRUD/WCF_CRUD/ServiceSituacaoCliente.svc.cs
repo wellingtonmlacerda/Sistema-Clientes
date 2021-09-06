@@ -17,25 +17,33 @@ namespace WCF_CRUD
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConStr"].ConnectionString);
         public string InsertSituacaoCliente(SituacaoCliente eDetails)
         {
-            string Status;
-            SqlCommand cmd = new SqlCommand("SITUACAO_CLIENTE_INSERT", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@DESCRICAO", eDetails.GetSetSICL_DESCRICAO);
-            if (con.State == ConnectionState.Closed)
+            try
             {
-                con.Open();
+                string Status;
+                SqlCommand cmd = new SqlCommand("SITUACAO_CLIENTE_INSERT", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@DESCRICAO", eDetails.GetSetSICL_DESCRICAO);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                int result = cmd.ExecuteNonQuery();
+                if (result == 1)
+                {
+                    Status = eDetails.GetSetSICL_DESCRICAO + " salvo com sucesso";
+                }
+                else
+                {
+                    Status = eDetails.GetSetSICL_DESCRICAO + " não foi possível salvar o registro";
+                }
+                con.Close();
+                return Status;
+
             }
-            int result = cmd.ExecuteNonQuery();
-            if (result == 1)
+            catch (Exception ex)
             {
-                Status = eDetails.GetSetSICL_DESCRICAO + " salvo com sucesso";
+                return ex.Message;
             }
-            else
-            {
-                Status = eDetails.GetSetSICL_DESCRICAO + " não foi possível salvar o registro";
-            }
-            con.Close();
-            return Status;
         }
 
         public DataSet GetSituacaoCliente(SituacaoCliente eDetails)
@@ -72,39 +80,53 @@ namespace WCF_CRUD
         }
         public string UpdateSituacaoCliente(SituacaoCliente eDetails)
         {
-            string Status;
-            SqlCommand cmd = new SqlCommand("SITUACAO_CLIENTE_UPDATE", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@ID", eDetails.GetSetSICL_PK_ID);
-            cmd.Parameters.AddWithValue("@DESCRICAO", eDetails.GetSetSICL_DESCRICAO);
-            if (con.State == ConnectionState.Closed)
+            try
             {
-                con.Open();
+                string Status;
+                SqlCommand cmd = new SqlCommand("SITUACAO_CLIENTE_UPDATE", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ID", eDetails.GetSetSICL_PK_ID);
+                cmd.Parameters.AddWithValue("@DESCRICAO", eDetails.GetSetSICL_DESCRICAO);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                int result = cmd.ExecuteNonQuery();
+                if (result == 1)
+                {
+                    Status = "Registro atualizado com sucesso";
+                }
+                else
+                {
+                    Status = "Não foi possível atualizar o registro";
+                }
+                con.Close();
+                return Status;
             }
-            int result = cmd.ExecuteNonQuery();
-            if (result == 1)
+            catch (Exception ex)
             {
-                Status = "Registro atualizado com sucesso";
+                return ex.Message;
             }
-            else
-            {
-                Status = "Não foi possível atualizar o registro";
-            }
-            con.Close();
-            return Status;
-        }
+}
         public bool DeleteSituacaoCliente(SituacaoCliente eDetails)
         {
-            SqlCommand cmd = new SqlCommand("SITUACAO_CLIENTE_DELETE", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@ID", eDetails.GetSetSICL_PK_ID);
-            if (con.State == ConnectionState.Closed)
+            try
             {
-                con.Open();
+                SqlCommand cmd = new SqlCommand("SITUACAO_CLIENTE_DELETE", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ID", eDetails.GetSetSICL_PK_ID);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                cmd.ExecuteNonQuery();
+                con.Close();
+                return true;
             }
-            cmd.ExecuteNonQuery();
-            con.Close();
-            return true;
+            catch
+            {
+                return false;
+            }
         }
     }
 }

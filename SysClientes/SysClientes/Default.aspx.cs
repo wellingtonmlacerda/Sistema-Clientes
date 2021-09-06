@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using SysClientes.WcfCliente;
+using SysClientes.WcfTipoCliente;
+using SysClientes.WcfSituacaoClientes;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
@@ -14,7 +16,9 @@ namespace SysClientes
     public partial class _Default : Page
     {
         #region Variable Declaration  
-        ClienteClient obj = new ClienteClient();
+        ServiceClienteClient obj = new ServiceClienteClient();
+        ServiceTipoClienteClient objTipCli = new ServiceTipoClienteClient();
+        ServiceSituacaoClienteClient objSitCli = new ServiceSituacaoClienteClient();
         #endregion
         #region User Define Methods  
         private void ClearControls()
@@ -22,17 +26,33 @@ namespace SysClientes
             txtNome.Text = string.Empty;
             txtCPF.Text = string.Empty;
             txtNascimento.Text = string.Empty;
-            txtSexo.Text = string.Empty;
-            txtSituacao.Text = string.Empty;
-            txtTipo.Text = string.Empty;
+            ddlSituacao.SelectedIndex = 0;
+            ddlTipoCliente.SelectedIndex = 0;
             btnSubmit.Text = "Salvar";
             txtNome.Focus();
         }
         private void BindClientes(int? Id)
         {
             Clientes eDetails = new Clientes();
+            TipoCliente eTipoCliente = new TipoCliente();
+            SituacaoCliente eSituacaoCliente = new SituacaoCliente();
+
             DataSet ds = new DataSet();
+            DataSet dsTipCli = new DataSet();
+            DataSet dsSitCli = new DataSet();
+
             ds = obj.GetClientes(eDetails);
+            dsTipCli = objTipCli.GetTipoCliente(eTipoCliente);
+            dsSitCli = objSitCli.GetSituacaoCliente(eSituacaoCliente);
+
+            ddlTipoCliente.DataSource = dsTipCli;
+            ddlTipoCliente.DataBind();
+            ddlTipoCliente.Items.Insert(0, new ListItem("Selecione...", "0"));
+
+            ddlSituacao.DataSource = dsSitCli;
+            ddlSituacao.DataBind();
+            ddlSituacao.Items.Insert(0, new ListItem("Selecione...", "0"));
+
             grdWcfTest.DataSource = ds;
             grdWcfTest.DataBind();
         }
@@ -42,12 +62,12 @@ namespace SysClientes
             eDetails.GetSetCLIE_NOME = txtNome.Text.Trim();
             eDetails.GetSetCLIE_CPF = txtCPF.Text.Trim();
             eDetails.GetSetCLIE_NASCIMENTO = Convert.ToDateTime(txtNascimento.Text);
-            eDetails.GetSetCLIE_SEXO = txtSexo.Text.Trim();
-            eDetails.GetSetCLIE_FK_PK_SICL = Convert.ToInt32(txtSituacao.Text.Trim());
-            eDetails.GetSetCLIE_FK_PK_TICL = Convert.ToInt32(txtTipo.Text.Trim());
+            eDetails.GetSetCLIE_SEXO = ddlSexo.SelectedValue;
+            eDetails.GetSetCLIE_FK_PK_SICL = Convert.ToInt32(ddlSituacao.SelectedValue);
+            eDetails.GetSetCLIE_FK_PK_TICL = Convert.ToInt32(ddlTipoCliente.SelectedValue);
             lblStatus.Text = obj.InsertClientes(eDetails);
-            ClearControls();
             BindClientes(null);
+            ClearControls();
         }
         private void UpdateClientes()
         {
@@ -56,13 +76,13 @@ namespace SysClientes
             eDetails.GetSetCLIE_NOME = txtNome.Text.Trim();
             eDetails.GetSetCLIE_CPF = txtCPF.Text.Trim();
             eDetails.GetSetCLIE_NASCIMENTO = Convert.ToDateTime(txtNascimento.Text);
-            eDetails.GetSetCLIE_SEXO = txtSexo.Text.Trim();
-            eDetails.GetSetCLIE_FK_PK_SICL = Convert.ToInt32(txtSituacao.Text.Trim());
-            eDetails.GetSetCLIE_FK_PK_TICL = Convert.ToInt32(txtTipo.Text.Trim());
+            eDetails.GetSetCLIE_SEXO = ddlSexo.SelectedValue;
+            eDetails.GetSetCLIE_FK_PK_SICL = Convert.ToInt32(ddlSituacao.SelectedValue);
+            eDetails.GetSetCLIE_FK_PK_TICL = Convert.ToInt32(ddlTipoCliente.SelectedValue);
             obj.UpdateClientes(eDetails);
             lblStatus.Text = obj.UpdateClientes(eDetails);
-            ClearControls();
             BindClientes(null);
+            ClearControls();
         }
         #endregion
         #region Page Event Handlers  
@@ -98,9 +118,9 @@ namespace SysClientes
                 txtNome.Text = ds.Tables[0].Rows[0]["CLIE_NOME"].ToString();
                 txtCPF.Text = ds.Tables[0].Rows[0]["CLIE_CPF"].ToString();
                 txtNascimento.Text = ds.Tables[0].Rows[0]["CLIE_NASCIMENTO"].ToString();
-                txtSexo.Text = ds.Tables[0].Rows[0]["CLIE_SEXO"].ToString();
-                txtSituacao.Text = ds.Tables[0].Rows[0]["CLIE_FK_PK_SICL"].ToString();
-                txtTipo.Text = ds.Tables[0].Rows[0]["CLIE_FK_PK_TICL"].ToString();
+                ddlSexo.SelectedValue = ds.Tables[0].Rows[0]["CLIE_SEXO"].ToString();
+                ddlSituacao.SelectedValue = ds.Tables[0].Rows[0]["CLIE_FK_PK_SICL"].ToString();
+                ddlTipoCliente.SelectedValue = ds.Tables[0].Rows[0]["CLIE_FK_PK_TICL"].ToString();
                 btnSubmit.Text = "Atualizar";
             }
         }

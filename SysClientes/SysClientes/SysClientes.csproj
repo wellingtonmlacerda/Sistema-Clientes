@@ -107,6 +107,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\WcfCliente\ServiceCliente.wsdl" />
+    <None Include="Connected Services\WcfCliente\ServiceCliente.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WcfCliente\ServiceCliente1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WcfCliente\ServiceCliente2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WcfCliente\ServiceCliente3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\WcfSituacaoClientes\ServiceSituacaoCliente.wsdl" />
     <None Include="Connected Services\WcfSituacaoClientes\ServiceSituacaoCliente.xsd">
       <SubType>Designer</SubType>
@@ -134,14 +147,14 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="TipoCliente.aspx" />
-    <None Include="Connected Services\WcfCliente\Cliente.disco" />
+    <None Include="Connected Services\WcfCliente\ServiceCliente.disco" />
     <None Include="Connected Services\WcfCliente\configuration91.svcinfo" />
     <None Include="Connected Services\WcfCliente\configuration.svcinfo" />
     <None Include="Connected Services\WcfCliente\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="TipoCliente.aspx" />
     <Content Include="SituacaoCliente.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -161,19 +174,6 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
-    <None Include="Connected Services\WcfCliente\Cliente.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WcfCliente\Cliente1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WcfCliente\Cliente2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WcfCliente\Cliente3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WcfCliente\Service1.wsdl" />
     <None Include="Connected Services\WcfTipoCliente\ServiceTipoCliente.wsdl" />
     <None Include="Connected Services\WcfTipoCliente\ServiceTipoCliente.xsd">
       <SubType>Designer</SubType>
@@ -224,6 +224,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Connected Services\WcfCliente\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\WcfSituacaoClientes\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -242,11 +247,6 @@
       <DependentUpon>TipoCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Connected Services\WcfCliente\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="SituacaoCliente.aspx.cs">
       <DependentUpon>SituacaoCliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

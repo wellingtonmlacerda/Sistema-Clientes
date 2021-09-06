@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -63,7 +64,7 @@
   <ItemGroup>
     <Content Include="ServiceSituacaoCliente.svc" />
     <Content Include="ServiceTipoCliente.svc" />
-    <Content Include="Cliente.svc" />
+    <Content Include="ServiceCliente.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -75,10 +76,10 @@
     <Compile Include="ServiceTipoCliente.svc.cs">
       <DependentUpon>ServiceTipoCliente.svc</DependentUpon>
     </Compile>
-    <Compile Include="Cliente.svc.cs">
-      <DependentUpon>Cliente.svc</DependentUpon>
+    <Compile Include="ServiceCliente.svc.cs">
+      <DependentUpon>ServiceCliente.svc</DependentUpon>
     </Compile>
-    <Compile Include="ICliente.cs" />
+    <Compile Include="IServiceCliente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

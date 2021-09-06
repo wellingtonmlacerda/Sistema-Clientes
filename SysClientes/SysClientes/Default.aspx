@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SysClientes._Default" %>
-
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1">
         <div style="width: 100%;" align="center">
@@ -15,31 +14,37 @@
                     <tr>
                         <td>CPF</td>
                         <td>
-                            <asp:TextBox ID="txtCPF" runat="server" class="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtCPF" runat="server" class="MaskCPF form-control"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>Nascimento</td>
                         <td>
-                            <asp:TextBox ID="txtNascimento" runat="server" class="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtNascimento" runat="server" class="MaskData form-control"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>Sexo</td>
                         <td>
-                            <asp:TextBox ID="txtSexo" runat="server" class="form-control"></asp:TextBox>
+                            <asp:DropDownList ID="ddlSexo" runat="server" class="form-control">
+                                <asp:ListItem Selected="True" Text="Selecione..." Value=""></asp:ListItem>
+                                <asp:ListItem Text="Masculino" Value="M"></asp:ListItem>
+                                <asp:ListItem Text="Feminino" Value="F"></asp:ListItem>
+                            </asp:DropDownList>
                         </td>
                     </tr>
                     <tr>
                         <td>Situação</td>
                         <td>
-                            <asp:TextBox ID="txtSituacao" runat="server" class="form-control"></asp:TextBox>
+                            <asp:DropDownList ID="ddlSituacao" runat="server" class="form-control" DataTextField="SICL_DESCRICAO" DataValueField="SICL_PK_ID">
+                            </asp:DropDownList>
                         </td>
                     </tr>
                     <tr>
                         <td>Tipo</td>
                         <td>
-                            <asp:TextBox ID="txtTipo" runat="server" class="form-control"></asp:TextBox>
+                            <asp:DropDownList ID="ddlTipoCliente" runat="server" class="form-control" DataTextField="TICL_DESCRICAO" DataValueField="TICL_PK_ID">
+                            </asp:DropDownList>
                         </td>
                     </tr>
                     <tr>
@@ -104,6 +109,12 @@
                                     <asp:TemplateField HeaderText="Tipo">
                                         <ItemTemplate>
                                             <asp:Label ID="lblTipo" runat="server" Text='<%#Eval("TICL_TIPO") %>'>  
+                                            </asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Tipo Descrição">
+                                        <ItemTemplate>
+                                            <asp:Label ID="lblTipoDescricao" runat="server" Text='<%#Eval("TICL_DESCRICAO") %>'>  
                                             </asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>

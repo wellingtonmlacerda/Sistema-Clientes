@@ -155,64 +155,64 @@ namespace SysClientes.WcfCliente {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WcfCliente.ICliente")]
-    public interface ICliente {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WcfCliente.IServiceCliente")]
+    public interface IServiceCliente {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICliente/InsertClientes", ReplyAction="http://tempuri.org/ICliente/InsertClientesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCliente/InsertClientes", ReplyAction="http://tempuri.org/IServiceCliente/InsertClientesResponse")]
         string InsertClientes(SysClientes.WcfCliente.Clientes eDatils);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICliente/InsertClientes", ReplyAction="http://tempuri.org/ICliente/InsertClientesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCliente/InsertClientes", ReplyAction="http://tempuri.org/IServiceCliente/InsertClientesResponse")]
         System.Threading.Tasks.Task<string> InsertClientesAsync(SysClientes.WcfCliente.Clientes eDatils);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICliente/GetClientes", ReplyAction="http://tempuri.org/ICliente/GetClientesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCliente/GetClientes", ReplyAction="http://tempuri.org/IServiceCliente/GetClientesResponse")]
         System.Data.DataSet GetClientes(SysClientes.WcfCliente.Clientes eDatils);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICliente/GetClientes", ReplyAction="http://tempuri.org/ICliente/GetClientesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCliente/GetClientes", ReplyAction="http://tempuri.org/IServiceCliente/GetClientesResponse")]
         System.Threading.Tasks.Task<System.Data.DataSet> GetClientesAsync(SysClientes.WcfCliente.Clientes eDatils);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICliente/FetchUpdatedRecords", ReplyAction="http://tempuri.org/ICliente/FetchUpdatedRecordsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCliente/FetchUpdatedRecords", ReplyAction="http://tempuri.org/IServiceCliente/FetchUpdatedRecordsResponse")]
         System.Data.DataSet FetchUpdatedRecords(SysClientes.WcfCliente.Clientes eDatils);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICliente/FetchUpdatedRecords", ReplyAction="http://tempuri.org/ICliente/FetchUpdatedRecordsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCliente/FetchUpdatedRecords", ReplyAction="http://tempuri.org/IServiceCliente/FetchUpdatedRecordsResponse")]
         System.Threading.Tasks.Task<System.Data.DataSet> FetchUpdatedRecordsAsync(SysClientes.WcfCliente.Clientes eDatils);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICliente/UpdateClientes", ReplyAction="http://tempuri.org/ICliente/UpdateClientesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCliente/UpdateClientes", ReplyAction="http://tempuri.org/IServiceCliente/UpdateClientesResponse")]
         string UpdateClientes(SysClientes.WcfCliente.Clientes eDatils);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICliente/UpdateClientes", ReplyAction="http://tempuri.org/ICliente/UpdateClientesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCliente/UpdateClientes", ReplyAction="http://tempuri.org/IServiceCliente/UpdateClientesResponse")]
         System.Threading.Tasks.Task<string> UpdateClientesAsync(SysClientes.WcfCliente.Clientes eDatils);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICliente/DeleteClientes", ReplyAction="http://tempuri.org/ICliente/DeleteClientesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCliente/DeleteClientes", ReplyAction="http://tempuri.org/IServiceCliente/DeleteClientesResponse")]
         bool DeleteClientes(SysClientes.WcfCliente.Clientes eDatils);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICliente/DeleteClientes", ReplyAction="http://tempuri.org/ICliente/DeleteClientesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCliente/DeleteClientes", ReplyAction="http://tempuri.org/IServiceCliente/DeleteClientesResponse")]
         System.Threading.Tasks.Task<bool> DeleteClientesAsync(SysClientes.WcfCliente.Clientes eDatils);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IClienteChannel : SysClientes.WcfCliente.ICliente, System.ServiceModel.IClientChannel {
+    public interface IServiceClienteChannel : SysClientes.WcfCliente.IServiceCliente, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ClienteClient : System.ServiceModel.ClientBase<SysClientes.WcfCliente.ICliente>, SysClientes.WcfCliente.ICliente {
+    public partial class ServiceClienteClient : System.ServiceModel.ClientBase<SysClientes.WcfCliente.IServiceCliente>, SysClientes.WcfCliente.IServiceCliente {
         
-        public ClienteClient() {
+        public ServiceClienteClient() {
         }
         
-        public ClienteClient(string endpointConfigurationName) : 
+        public ServiceClienteClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public ClienteClient(string endpointConfigurationName, string remoteAddress) : 
+        public ServiceClienteClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ClienteClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ServiceClienteClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ClienteClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ServiceClienteClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         

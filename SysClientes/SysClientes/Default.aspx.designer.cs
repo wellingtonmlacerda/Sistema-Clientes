@@ -42,31 +42,31 @@ namespace SysClientes
         protected global::System.Web.UI.WebControls.TextBox txtNascimento;
 
         /// <summary>
-        /// txtSexo control.
+        /// ddlSexo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSexo;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSexo;
 
         /// <summary>
-        /// txtSituacao control.
+        /// ddlSituacao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSituacao;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSituacao;
 
         /// <summary>
-        /// txtTipo control.
+        /// ddlTipoCliente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTipo;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoCliente;
 
         /// <summary>
         /// btnSubmit control.
