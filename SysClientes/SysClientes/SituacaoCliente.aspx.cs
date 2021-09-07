@@ -23,29 +23,50 @@ namespace SysClientes
         }
         private void BindSituacaoClientes(int? Id)
         {
-            SituacaoCliente eDetails = new SituacaoCliente();
-            DataSet ds = new DataSet();
-            ds = obj.GetSituacaoCliente(eDetails);
-            grdWcfTest.DataSource = ds;
-            grdWcfTest.DataBind();
+            try
+            {
+                SituacaoCliente eDetails = new SituacaoCliente();
+                DataSet ds = new DataSet();
+                ds = obj.GetSituacaoCliente(eDetails);
+                grdWcfTest.DataSource = ds;
+                grdWcfTest.DataBind();
+            }
+            catch (Exception ex)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "Operação Invalida!", "alert('" + ex.Message + "');", true);
+            }
         }
         private void SaveClientes()
         {
-            SituacaoCliente eDetails = new SituacaoCliente();
-            eDetails.GetSetSICL_DESCRICAO = txtDescricao.Text.Trim();
-            lblStatus.Text = obj.InsertSituacaoCliente(eDetails);
-            ClearControls();
-            BindSituacaoClientes(null);
+            try
+            {
+                SituacaoCliente eDetails = new SituacaoCliente();
+                eDetails.GetSetSICL_DESCRICAO = txtDescricao.Text.Trim();
+                lblStatus.Text = obj.InsertSituacaoCliente(eDetails);
+                ClearControls();
+                BindSituacaoClientes(null);
+            }
+            catch (Exception ex)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "Operação Invalida!", "alert('" + ex.Message + "');", true);
+            }
         }
         private void UpdateClientes()
         {
-            SituacaoCliente eDetails = new SituacaoCliente();
-            eDetails.GetSetSICL_PK_ID = Convert.ToInt32(ViewState["ID"].ToString());
-            eDetails.GetSetSICL_DESCRICAO = txtDescricao.Text.Trim();
-            obj.UpdateSituacaoCliente(eDetails);
-            lblStatus.Text = obj.UpdateSituacaoCliente(eDetails);
-            ClearControls();
-            BindSituacaoClientes(null);
+            try
+            {
+                SituacaoCliente eDetails = new SituacaoCliente();
+                eDetails.GetSetSICL_PK_ID = Convert.ToInt32(ViewState["ID"].ToString());
+                eDetails.GetSetSICL_DESCRICAO = txtDescricao.Text.Trim();
+                obj.UpdateSituacaoCliente(eDetails);
+                lblStatus.Text = obj.UpdateSituacaoCliente(eDetails);
+                ClearControls();
+                BindSituacaoClientes(null);
+            }
+            catch (Exception ex)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "Operação Invalida!", "alert('" + ex.Message + "');", true);
+            }
         }
         #endregion
         #region Page Event Handlers  
@@ -71,30 +92,44 @@ namespace SysClientes
         }
         protected void lnkEdit_Command(object sender, CommandEventArgs e)
         {
-            SituacaoCliente eDetails = new SituacaoCliente();
-            eDetails.GetSetSICL_PK_ID = int.Parse(e.CommandArgument.ToString());
-            ViewState["ID"] = eDetails.GetSetSICL_PK_ID;
-            DataSet ds = new DataSet();
-            ds = obj.FetchUpdatedRecords(eDetails);
-            if (ds.Tables[0].Rows.Count > 0)
+            try
             {
-                txtDescricao.Text = ds.Tables[0].Rows[0]["SICL_DESCRICAO"].ToString();
-                btnSubmit.Text = "Atualizar";
+                SituacaoCliente eDetails = new SituacaoCliente();
+                eDetails.GetSetSICL_PK_ID = int.Parse(e.CommandArgument.ToString());
+                ViewState["ID"] = eDetails.GetSetSICL_PK_ID;
+                DataSet ds = new DataSet();
+                ds = obj.FetchUpdatedRecords(eDetails);
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    txtDescricao.Text = ds.Tables[0].Rows[0]["SICL_DESCRICAO"].ToString();
+                    btnSubmit.Text = "Atualizar";
+                }
+            }
+            catch (Exception ex)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "Operação Invalida!", "alert('" + ex.Message + "');", true);
             }
         }
         protected void lnkDelete_Command(object sender, CommandEventArgs e)
         {
-            SituacaoCliente eDetails = new SituacaoCliente();
-            eDetails.GetSetSICL_PK_ID = int.Parse(e.CommandArgument.ToString());
-            if (obj.DeleteSituacaoCliente(eDetails) == true)
+            try
             {
-                lblStatus.Text = "Registro excluido com sucesso";
+                SituacaoCliente eDetails = new SituacaoCliente();
+                eDetails.GetSetSICL_PK_ID = int.Parse(e.CommandArgument.ToString());
+                if (obj.DeleteSituacaoCliente(eDetails) == true)
+                {
+                    lblStatus.Text = "Registro excluido com sucesso";
+                }
+                else
+                {
+                    lblStatus.Text = "Não foi possível excluir o registro";
+                }
+                BindSituacaoClientes(null);
             }
-            else
+            catch (Exception ex)
             {
-                lblStatus.Text = "Não foi possível excluir o registro";
+                ClientScript.RegisterStartupScript(this.GetType(), "Operação Invalida!", "alert('" + ex.Message + "');", true);
             }
-            BindSituacaoClientes(null);
         }
         protected void btnCancel_Click(object sender, EventArgs e)
         {
