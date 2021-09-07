@@ -14,20 +14,20 @@
                     <tr>
                         <td>CPF</td>
                         <td>
-                            <asp:TextBox ID="txtCPF" runat="server" class="MaskCPF form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtCPF" placeholder="000.000.000-00" runat="server" class="MaskCPF form-control"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>Nascimento</td>
                         <td>
-                            <asp:TextBox ID="txtNascimento" runat="server" class="MaskData form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtNascimento" placeholder="DD/MM/YYYY" runat="server" class="MaskData form-control"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>Sexo</td>
                         <td>
                             <asp:DropDownList ID="ddlSexo" runat="server" class="form-control">
-                                <asp:ListItem Selected="True" Text="Selecione..." Value=""></asp:ListItem>
+                                <asp:ListItem Selected="True" Text="Selecione..." Value="0"></asp:ListItem>
                                 <asp:ListItem Text="Masculino" Value="M"></asp:ListItem>
                                 <asp:ListItem Text="Feminino" Value="F"></asp:ListItem>
                             </asp:DropDownList>

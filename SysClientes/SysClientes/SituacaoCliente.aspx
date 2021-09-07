@@ -9,7 +9,7 @@
                     <tr>
                         <td>Situação</td>
                         <td>
-                            <asp:TextBox ID="txtDescricao" runat="server" class="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtDescricao" placeholder="Ativo, Inativo..." runat="server" class="form-control"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>

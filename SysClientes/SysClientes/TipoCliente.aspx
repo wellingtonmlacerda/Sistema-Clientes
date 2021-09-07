@@ -13,7 +13,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Razão Socieal</td>
+                        <td>Descrição</td>
                         <td>
                             <asp:TextBox ID="txtDescricao" runat="server" class="form-control"></asp:TextBox>
                         </td>
